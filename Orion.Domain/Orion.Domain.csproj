@@ -40,12 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="DateSpan.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IAggregateRoot.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Reservation\Officer.cs" />
+    <Compile Include="Reservation\Reservation.cs" />
     <Compile Include="ValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Person\" />
-    <Folder Include="Reservation\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

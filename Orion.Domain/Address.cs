@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,11 @@ namespace Orion.Domain
             PostalCode = postalCode;
         }
 
-        public static Address NewAddress(string city, string street, string streetNo, string localeNo, string postalCode)
+        public static Address NewAddress(string city, string street, string streetNo, string localeNo="", string postalCode = "")
         {
+            if (String.IsNullOrWhiteSpace(city)) 
+                throw new ArgumentException(@"Nazwa miejscowości jest wymagana!");
+            
             return new Address(city, street, streetNo, localeNo, postalCode);
         }
 
