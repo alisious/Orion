@@ -46,6 +46,7 @@
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Reservation\Officer.cs" />
+    <Compile Include="Reservation\Prolongation.cs" />
     <Compile Include="Reservation\Reservation.cs" />
     <Compile Include="ValueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

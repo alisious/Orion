@@ -25,7 +25,7 @@ namespace Orion.Domain.Tests
         }
 
         [TestMethod]
-        public void można_zabezpieczyć_osobę_w_ramach_tej_samej_jednostki_w_różnym_celu()
+        public void zabezpieczenie_może_dotyczyć_różnych_celów_w_ramach_tej_samej_jednostki()
         {
             throw new NotImplementedException();
         }
@@ -43,23 +43,36 @@ namespace Orion.Domain.Tests
         }
 
         [TestMethod]
-        public void zabezpieczenie_rejestruje_się_dla_konkretnej_jednostki()
+        [ExpectedException(typeof(ArgumentException))]
+        public void nie_można_zarejestrować_zabezpieczenia_bez_podania_jednostki()
         {
-            throw new NotImplementedException();
+            //Given
+            const string officerName = "NAZWISKO";
+            const string organizationalUnit = "";
+            var start = new DateTime(2015, 1, 1);
+            var end = new DateTime(2015, 1, 20);
+            var created = new DateTime(2015, 1, 1);
+
+            //When
+            var reservation = new Reservation(organizationalUnit,officerName, start, end, created);
+
+            //Then
+            Assert.IsNull(reservation);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void zabezpieczenie_rejestruje_się_dla_konkretnego_prowadzącego()
+        public void nie_można_zarejestrować_zabezpieczenia_bez_podania_oficera_prowadzącego()
         {
             //Given
             const string officerName = "";
+            const string organizationalUnit = "JEDNOSTKA";
             var start = new DateTime(2015, 1, 1);
             var end = new DateTime(2015, 1, 20);
             var created = new DateTime(2015, 1, 1);
             
             //When
-            var reservation = new Reservation(officerName,start,end,created);
+            var reservation = new Reservation(organizationalUnit,officerName,start,end,created);
 
             //Then
             Assert.IsNull(reservation);

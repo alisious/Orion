@@ -10,14 +10,23 @@ namespace Orion.Domain
     {
         public DateSpan ReservationPeriod { get; private set; }
         private IList<Officer> _officers;
-        public DateTime CreationDate { get; private set; } 
+        public string OrganizationalUnit { get; private set; }
+        public DateTime CreationDate { get; private set; }
 
-        public Reservation(string officerName,DateTime start, DateTime end,DateTime registrationDate)
+        private IList<Prolongation> _prolongations; 
+
+        public Reservation(string organizationalUnit,string officerName,DateTime start, DateTime end,DateTime registrationDate)
         {
-            ReservationPeriod = new DateSpan(start,end);
-            CreationDate = registrationDate;
+            
+            if (String.IsNullOrWhiteSpace(organizationalUnit))
+                throw new ArgumentException("Wymagane jest podanie jednostki prowadzącej!");
+            OrganizationalUnit = organizationalUnit;
+            ReservationPeriod = new DateSpan(start, end);
             _officers = new List<Officer>();
             ChangeOfficer(officerName,start,end,registrationDate);
+
+            _prolongations = new List<Prolongation>();
+            CreationDate = registrationDate;
         }
 
         public IReadOnlyList<Officer> Officers { get { return new List<Officer>(_officers); }} 
