@@ -52,6 +52,11 @@ namespace Orion.Domain.Tests
             var start = new DateTime(2015, 1, 1);
             var end = new DateTime(2015, 1, 20);
             var created = new DateTime(2015, 1, 1);
+            var officer = new OfficerFluent();
+             
+            officer
+                .WithName("KORPUSIK")
+                .WithRank("PPŁK");
 
             //When
             var reservation = new Reservation(organizationalUnit,officerName, start, end, created);

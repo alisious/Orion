@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Orion.Domain.OfficerFluent" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reservation\Officer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Orion.Domain.Officer" Collapsed="true">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFAAAAAAAAAAAgAAAAAAQAAAABAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Reservation\Officer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Orion.Domain.Reservation">
+    <Position X="5.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QQIAAAAAIAAAAAAAAAACAAAAAAAEAEABAAAQAAAAAQA=</HashCode>
+      <FileName>Reservation\Reservation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Officers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Orion.Domain.Prolongation" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Reservation\Prolongation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

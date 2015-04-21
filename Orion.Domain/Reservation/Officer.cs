@@ -6,9 +6,30 @@ using System.Threading.Tasks;
 
 namespace Orion.Domain
 {
+
+    public class OfficerFluent
+    {
+        private readonly Officer _obj = new Officer();
+        public OfficerFluent WithName(string name)
+        {
+            _obj.Name = name;
+            return this;
+        }
+
+        public OfficerFluent WithRank(string rank)
+        {
+            _obj.Rank = rank;
+            return this;
+        }
+
+    }
+
+
+
     public class Officer :ValueObject
     {
-        public string Name { get; private set; }
+        public string Name { get; set; }
+        public string Rank { get; set; }
         public DateSpan ActivityPeriod { get; private set; }
         public DateTime ChangeDate { get; private set; }
 
@@ -20,6 +41,20 @@ namespace Orion.Domain
             ActivityPeriod = new DateSpan(start,end);
             ChangeDate = changeDate;
         }
+
+        public Officer()
+        {
+
+        }
+
+        
+
+        public void WithRank(string rank)
+        {
+
+        }
+
+
 
         protected override IEnumerable<object> GetAtomicValues()
         {
